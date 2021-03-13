@@ -7,7 +7,7 @@ Back office :
 - [ ] Authentification de l'admin
 - [ ] Liste de clients
 - [ ] Liste des commandes 
-- [ ] [OPTIONNEL] Possibilité de modifier le statu de la commande
+- [ ] [OPTIONNEL] Possibilité de modifier le statut de la commande
 
 
 Front Office:
