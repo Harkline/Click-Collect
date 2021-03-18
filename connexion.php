@@ -1,3 +1,8 @@
+<?php
+error_reporting(E_ALL);
+//Ici, appel au script de connexion, qui lance la session
+//session_start();
+?>
 
 <!DOCTYPE html>
 
@@ -8,7 +13,7 @@
 		<title>Connexion</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<link rel="stylesheet" type="text/css" href="bootstrap-5.0.0/css/Bootstrap.css">    
+		<link rel="stylesheet" type="text/css" href="libs/bootstrap-5.0.0/css/Bootstrap.css">    
 	</head>
 	<body>
 	
