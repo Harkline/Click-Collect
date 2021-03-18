@@ -2,6 +2,7 @@
 error_reporting(E_ALL);
 //Ici, appel au script de connexion, qui lance la session
 //session_start();
+//test push git to resolve anonymous push
 ?>
 
 <!DOCTYPE html>
