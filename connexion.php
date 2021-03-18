@@ -19,7 +19,8 @@ error_reporting(E_ALL);
 	<body>
 	
 		<form>
-			<fieldset>
+			
+			<div class="card" style="width: 18rem;">
 				<div class="form-group">
 					<label for="inputUsernameConnexion">Username</label>
 					<input type="username" class="form-control" id="inputUsernameConnexion" aria-describedby="emailHelp" placeholder="Enter username">
@@ -29,7 +30,8 @@ error_reporting(E_ALL);
 					<input type="password" class="form-control" id="inputPasswordConnexion" placeholder="Enter Password">
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
-			</fieldset>
+			</div>
+			
 		</form>
 		
 		
