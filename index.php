@@ -36,6 +36,9 @@
 				</ul>
 				<ul class="navbar-nav ms-auto">
 					<li class="nav-item">
+						<a class="nav-link" href="creationCompte.php">Créer un compte</a>
+					</li>
+					<li class="nav-item">
 						<a class="nav-link" href="connexion.php">Se connecter</a>
 					</li>
 				</ul>
