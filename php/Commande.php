@@ -26,7 +26,7 @@ class Commande{
 	}
 
 	
-	public Function getcommandebyid($id){
+	public Function getCommandeById($id){
 		try{
 		$sth = $this->Bdd->prepare("
 									SELECT id_commande,date_commande,id_client,total_commande FROM T_commandes 
@@ -39,7 +39,7 @@ class Commande{
 		}
 	}
 	
-	public Function getcommandesbyidclient($id){
+	public Function getCommandesByIdClient($id){
 		try{
 		$sth = $this->Bdd->prepare("
 									SELECT id_commande,id_client,date_commande FROM T_commandes 

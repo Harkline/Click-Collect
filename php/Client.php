@@ -25,7 +25,7 @@ class Client{
 	}
 	
 	
-	public Function verifieridentifiant($identifiant,$motdepasse){
+	public Function verifierIdentifiant($identifiant,$motdepasse){
 		$data=self::getclientsbyidentifiant($identifiant);
 		foreach($data as $row){
 			if ($row['id'] == $motdepasse):
@@ -38,7 +38,7 @@ class Client{
 	
 	
 	
-	public Function getclientsbyidentifiant($identifiant){
+	public Function getClientsByIdentifiant($identifiant){
 		try{
 		$sth = $this->Bdd->prepare("
 									SELECT Identifiant,MDP,Id_client,nom_client,prenom_client,adresse_client,telephone_client,email_client FROM T_clients 

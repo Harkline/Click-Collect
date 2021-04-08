@@ -7,7 +7,7 @@ class Produit{
 	Function __construct($Bdd){
 		$this->Bdd=$Bdd;
 	}	
-	public Function getallproducts(){
+	public Function getAllProducts(){
 		try{
 		$sth = $this->Bdd->prepare("
 									SELECT nom_produit,prix_produit,poids_produit,description_produit,stock_produit FROM T_produits 
@@ -18,7 +18,7 @@ class Produit{
 		}
 	}
 	
-	public Function getproductbyid($id){
+	public Function getProductById($id){
 		
 		$sth = $this->Bdd->prepare("
 									SELECT nom_produit,prix_produit,poids_produit,description_produit,stock_produit FROM T_produits 

@@ -9,7 +9,7 @@ class Admin{
 		$this->Bdd=$Bdd;
 	}
 	
-	public Function createadmin($identifiant,$MDP){
+	public Function createAdmin($identifiant,$MDP){
 		try{	
 		$sth = $this->Bdd->prepare("
 									INSERT INTO T_admins (Identifiant,MDP)
@@ -23,7 +23,7 @@ class Admin{
 		}
 	}
 	
-	public Function getadminsbyid($identifiant){
+	public Function getAdminsById($identifiant){
 		try{	
 		$sth = $this->Bdd->prepare("
 									SELECT MDP FROM T_admins 
