@@ -1,7 +1,7 @@
 <?php
 
 try{
-        $bdd =new PDO('mysql:host=localhost;dbname=demo;charset=utf8', 'pdo', 'pdo');
+        $bdd =new PDO('mysql:host=localhost;dbname=clickandcollect;charset=utf8', 'pdo', 'pdo');
         // Activation des erreurs PDO
          $bdd->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         // mode de fetch par défaut : FETCH_ASSOC / FETCH_OBJ / FETCH_BOTH ...
