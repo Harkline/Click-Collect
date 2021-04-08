@@ -3,6 +3,7 @@ error_reporting(E_ALL);
 //Ici, appel au script de connexion, qui lance la session
 //session_start();
 //test push git to resolve anonymous push
+
 ?>
 
 <!DOCTYPE html>
@@ -15,11 +16,11 @@ error_reporting(E_ALL);
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="libs/bootstrap-5.0.0/css/Bootstrap.css">    
+		<link rel="stylesheet" type="text/css" href="css/card.css"/>
 	</head>
 	<body>
 	
 		<form>
-			
 			<div class="card" style="width: 18rem;">
 				<div class="form-group">
 					<label for="inputUsernameConnexion">Username</label>
@@ -31,7 +32,6 @@ error_reporting(E_ALL);
 				</div>
 				<button type="submit" class="btn btn-primary">Submit</button>
 			</div>
-			
 		</form>
 		
 		
