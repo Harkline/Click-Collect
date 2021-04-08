@@ -3,7 +3,8 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	
-	//require "php/Client.php";
+	require_once "php/connectionbdd.php";
+	require_once "php/Client.php";
 
 	//YL - NOTE $_POST["mail"] mail correspond au nom du champ du formulaire
 	$mail = ISSET($_POST["mail"]) ? $_POST["mail"] : ""; 
@@ -15,7 +16,8 @@
 	#Envoi du formulaire
 	if(ISSET($_POST["btnValider"])){
 		if ($password == $hashPassword){
-			//$client = new Client();
+			
+			$client = new Client($bdd);
 			verifierIdentifiant($username, $hashPassword);
 		}
 		else {
