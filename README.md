@@ -18,3 +18,5 @@ Front Office:
 - [ ] Ajouter/retirer des produits du panier 
 - [ ] Transformation du panier en commande
 - [ ] Liste des commandes du client
+
+TO DO : SUPPRIMER LES DROITS GLOBAUX DE L'UTILISATEUR BDD
