@@ -1,5 +1,5 @@
 <?php 
-require "./connectionbdd.php";
+require_once __DIR__"/connectionbdd.php";
 
 
 class Commande{
