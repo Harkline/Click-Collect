@@ -14,7 +14,7 @@ class ProduitsCommande{
 		$sth = $this->Bdd->prepare("
 									INSERT INTO T_produits_commande (Id_commande,Id_produit,quantitee)
 									VALUES ((:Idcommande),(:Idproduit);(:quantitee)");
-		$sth->execute(array(':Idcommande' => $idcommande,':Idproduit' => $idproduit,':quantitee' => $quantitee);
+		$sth->execute(array(':Idcommande' => $idcommande,':Idproduit' => $idproduit,':quantitee' => $quantitee)
 
 		);
 		

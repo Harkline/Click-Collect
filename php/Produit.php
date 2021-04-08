@@ -20,6 +20,7 @@ class Produit{
 	
 	public Function getProductById($id){
 		
+		try{
 		$sth = $this->Bdd->prepare("
 									SELECT nom_produit,prix_produit,poids_produit,description_produit,stock_produit FROM T_produits 
 									WHERE id=(:id)");

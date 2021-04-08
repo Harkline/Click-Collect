@@ -15,7 +15,7 @@ class Commande{
 		$sth = $this->Bdd->prepare("
 									INSERT INTO T_commandes (Id_commande,Id_client,date_commande,total_commande)
 									VALUES (:id_commande,:id_client,:date_commande,:total_commande)");
-		$sth->execute(array(':id_commande' => $idcommande,':id_client' => $idclient,':date_commande' => $datecommande,':total_commande' => $totalcommande);
+		$sth->execute(array(':id_commande' => $idcommande,':id_client' => $idclient,':date_commande' => $datecommande,':total_commande' => $totalcommande)
 
 		);
 		

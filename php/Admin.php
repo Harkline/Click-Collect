@@ -14,7 +14,7 @@ class Admin{
 		$sth = $this->Bdd->prepare("
 									INSERT INTO T_admins (Identifiant,MDP)
 									VALUES (Identifiant=(:identifiant),MDP=(:MDP))");
-		$sth->execute(array(':identifiant' => $identifiant,':MDP' => $MDP);
+		$sth->execute(array(':identifiant' => $identifiant,':MDP' => $MDP)
 		);
 		
 		return $sth->fetchAll();
@@ -23,7 +23,7 @@ class Admin{
 		}
 	}
 	
-	public Function getAdminsById($identifiant){
+	public Function getAdminById($identifiant){
 		try{	
 		$sth = $this->Bdd->prepare("
 									SELECT MDP FROM T_admins 
