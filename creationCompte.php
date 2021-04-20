@@ -31,6 +31,8 @@
 		}
 	}
 
+	//Inclusion de la barre de navigation Bootstrap
+	include "./html/barreDeNavigation.html" 
 ?>
 
 <!DOCTYPE html>

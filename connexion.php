@@ -4,6 +4,8 @@ error_reporting(E_ALL);
 //session_start();
 //test push git to resolve anonymous push
 
+//Inclusion de la barre de navigation Bootstrap
+include "./html/barreDeNavigation.html" 
 ?>
 
 <!DOCTYPE html>
@@ -19,6 +21,9 @@ error_reporting(E_ALL);
 		<link rel="stylesheet" type="text/css" href="css/card.css"/>
 	</head>
 	<body>
+	
+	
+
 	
 		<form>
 			<div class="card" style="width: 18rem;">

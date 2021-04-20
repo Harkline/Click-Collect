@@ -1,3 +1,11 @@
+<?php
+error_reporting(E_ALL);
+
+//Inclusion de la barre de navigation Bootstrap
+include "./html/barreDeNavigation.html" 
+?>
+
+
 <!DOCTYPE html>
 
 <html lang="fr">
