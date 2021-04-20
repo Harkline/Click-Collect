@@ -33,7 +33,7 @@ INSERT INTO `t_admins` (`Identifiant`, `MDP`) VALUES
 CREATE TABLE IF NOT EXISTS `t_clients` (
   `Id_client` int(11) NOT NULL AUTO_INCREMENT,
   `Identifiant` varchar(50) NOT NULL,
-  `MDP` varchar(50) NOT NULL,
+  `MDP` varchar(300) NOT NULL,
   `nom_client` varchar(50) NOT NULL,
   `prenom_client` varchar(50) NOT NULL,
   `adresse_client` varchar(50) DEFAULT NULL,
