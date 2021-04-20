@@ -11,7 +11,7 @@ Back office :
 
 
 Front Office:
-- [ ] Création compte client
+- [x] Création compte client (NB: Ajouter des message d'erreurs à l'écran pour l'utilisateur, pour ne pas afficher juste les erreurs SQL pour un identifiant déjà pris par exemple)
 - [ ] [OPTIONNEL] Mise à jour des information du compte
 - [ ] Authentification du client 
 - [ ] Liste de produits 
