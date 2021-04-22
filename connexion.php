@@ -17,17 +17,13 @@ if ($_SESSION["identifiant"]){
 	$password = ISSET($_POST["password"]) ? $_POST["password"] : "null"; 
 	$btnSeConnecter = isset($_POST["btnSeConnecter"]) ? $_POST["btnSeConnecter"] : ""; 
 
-
 	$client = new Client($bdd);
 
 	if ($username and $password){
 		if ($client->verifierIdentifiant($username, $password)){
-			print("aled");
 			$_SESSION['identifiant'] = $username;
-			error_log("SessionStart !");
 		}
 		else {
-			print("Identifiant pas trouvé/valide");
 		}
 	}
 }
