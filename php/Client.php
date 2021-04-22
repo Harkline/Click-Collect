@@ -28,13 +28,12 @@ class Client{
 	
 	public Function verifierIdentifiant($identifiant,$motdepasse){
 		$data=self::getClientByIdentifiant($identifiant);
-		foreach($data as $row){
-			if ($row['id'] == $motdepasse){
-				return true;}
-			else{
-				return false;}
-			}
-		
+		if (password_verify($motdepasse, $data['MDP'])){
+			return true;
+		}
+		else{
+			return false;
+		}	
 	}
 	
 	
@@ -43,11 +42,11 @@ class Client{
 	public Function getClientByIdentifiant($identifiant){
 		try{
 		$sth = $this->Bdd->prepare("
-									SELECT Identifiant,MDP,Id_client,nom_client,prenom_client,adresse_client,telephone_client,email_client FROM T_clients 
+									SELECT * FROM T_clients 
 									WHERE Identifiant=(:identifiant)");
 		$sth->execute(array(':identifiant' => $identifiant));
 			
-		return $sth->fetchAll();
+		return $sth->fetch(PDO::FETCH_ASSOC);
 		} catch(PDOException $e) {
 			die('Erreur : ' . $e->getMessage());
 		}

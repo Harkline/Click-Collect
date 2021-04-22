@@ -1,11 +1,36 @@
 <?php
+session_start();
 error_reporting(E_ALL);
-//Ici, appel au script de connexion, qui lance la session
-//session_start();
-//test push git to resolve anonymous push
+include "./html/barreDeNavigation.html";
 
-//Inclusion de la barre de navigation Bootstrap
-include "./html/barreDeNavigation.html" 
+//Si on est déjà connecté, pas besoin de se connecter => exit
+if ($_SESSION["identifiant"]){
+	//Ici, appel au script de connexion, qui lance la session
+	//session_start();
+	//test push git to resolve anonymous push
+
+	require_once "php/connectionbdd.php";
+	require_once "php/Client.php";
+		
+	//Inclusion de la barre de navigation Bootstrap
+	$username = ISSET($_POST["username"]) ? $_POST["username"] : "null"; 
+	$password = ISSET($_POST["password"]) ? $_POST["password"] : "null"; 
+	$btnSeConnecter = isset($_POST["btnSeConnecter"]) ? $_POST["btnSeConnecter"] : ""; 
+
+
+	$client = new Client($bdd);
+
+	if ($username and $password){
+		if ($client->verifierIdentifiant($username, $password)){
+			print("aled");
+			$_SESSION['identifiant'] = $username;
+			error_log("SessionStart !");
+		}
+		else {
+			print("Identifiant pas trouvé/valide");
+		}
+	}
+}
 ?>
 
 <!DOCTYPE html>
@@ -25,17 +50,17 @@ include "./html/barreDeNavigation.html"
 	
 
 	
-		<form>
+		<form method="post">
 			<div class="card" style="width: 18rem;">
 				<div class="form-group">
-					<label for="inputUsernameConnexion">Username</label>
-					<input type="username" class="form-control" id="inputUsernameConnexion" aria-describedby="emailHelp" placeholder="Enter username">
+					<label for="inputUsernameConnexion">Nom d'utilisateur</label>
+					<input type="username" name="username" class="form-control" id="inputUsernameConnexion" placeholder="Veuillez saisir votre nom d'utilisateur">
 				</div>
 				<div class="form-group">
-					<label for="inputPasswordConnexion">Password</label>
-					<input type="password" class="form-control" id="inputPasswordConnexion" placeholder="Enter Password">
+					<label for="inputPasswordConnexion">Mot de passe</label>
+					<input type="password" name="password" class="form-control" id="inputPasswordConnexion" placeholder="Veuillez saisir votre mot de passe">
 				</div>
-				<button type="submit" class="btn btn-primary">Submit</button>
+				<button type="submit" class="btn btn-primary" name="btnSeConnecter">Se connecter</button>
 			</div>
 		</form>
 		

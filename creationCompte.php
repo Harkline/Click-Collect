@@ -88,7 +88,7 @@
 			</div>
 			
 			
-			<button type="submit" class="btn btn-primary" name="btnValider">Submit</button>		
+			<button type="submit" class="btn btn-primary" name="btnValider">Envoyer</button>		
 		</form>
 	</body>
 </html>
