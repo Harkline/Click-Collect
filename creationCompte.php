@@ -3,6 +3,8 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	
+	session_start();
+	
 	require_once "php/connectionbdd.php";
 	require_once "php/Client.php";
 
@@ -22,8 +24,7 @@
 		if ($password == $passwordConfirm){
 			
 			$client = new Client($bdd);
-			$client->createClient($username, $hashPassword, $customerLastName,$customerName,$adress, $phoneNumber,$mail); //$identifiant,$MDP,$nomclient,$prenomclient,$adresseclient,$telephoneclient,$emailclient
-			//$client->verifierIdentifiant($username, $hashPassword);
+			$client->createClient($username, $hashPassword, $customerLastName,$customerName,$adress, $phoneNumber,$mail);
 			
 		}
 		else {
@@ -31,8 +32,9 @@
 		}
 	}
 
+	
 	//Inclusion de la barre de navigation Bootstrap
-	include "./html/barreDeNavigation.html" 
+	include "./html/barreDeNavigation.html";
 ?>
 
 <!DOCTYPE html>

@@ -1,31 +1,17 @@
 <?php
-session_start();
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
+
+$btnValider = ISSET($_POST["btnValider"]) ? $_POST["btnValider"] : "null"; 
+
+
 include "./html/barreDeNavigation.html";
 
-//Si on est déjà connecté, pas besoin de se connecter => exit
-if ($_SESSION["identifiant"]){
-	//Ici, appel au script de connexion, qui lance la session
-	//session_start();
-	//test push git to resolve anonymous push
+print("testBtnValider: ".ISSET($_POST["btnValider"]));
 
-	require_once "php/connectionbdd.php";
-	require_once "php/Client.php";
-		
-	//Inclusion de la barre de navigation Bootstrap
-	$username = ISSET($_POST["username"]) ? $_POST["username"] : "null"; 
-	$password = ISSET($_POST["password"]) ? $_POST["password"] : "null"; 
-	$btnSeConnecter = isset($_POST["btnSeConnecter"]) ? $_POST["btnSeConnecter"] : ""; 
-
-	$client = new Client($bdd);
-
-	if ($username and $password){
-		if ($client->verifierIdentifiant($username, $password)){
-			$_SESSION['identifiant'] = $username;
-		}
-		else {
-		}
-	}
+if(ISSET($_POST["btnSeConnecter"])){
+	include "./php/scriptConnexion.php";
 }
 ?>
 
