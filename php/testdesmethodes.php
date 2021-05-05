@@ -1,10 +1,10 @@
 <?php
-require "./connectionbdd.php";  // require le fichier connexion pour fonctionner car il gère la connection a la bdd
-require "./Client.php"; 
-require "./Admin.php";
-require "./ProduitsCommande.php";
-require "./Commande.php";
-require "./Produit.php";
+require_once __DIR__ . "/connectionbdd.php";  // require le fichier connexion pour fonctionner car il gère la connection a la bdd
+require_once __DIR__ . "/Client.php"; 
+require_once __DIR__ . "/Admin.php";
+require_once __DIR__ . "/ProduitsCommande.php";
+require_once __DIR__ . "/Commande.php";
+require_once __DIR__ . "/Produit.php";
 
 
 session_start(); //session

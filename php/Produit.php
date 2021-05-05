@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__"/connectionbdd.php";
+require_once __DIR__ . "/connectionbdd.php";
 
 class Produit{
 	Private $Bdd=Null;
