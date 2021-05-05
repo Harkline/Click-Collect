@@ -13,14 +13,24 @@ class Admin{
 		try{	
 		$sth = $this->Bdd->prepare("
 									INSERT INTO T_admins (Identifiant,MDP)
-									VALUES (Identifiant=(:identifiant),MDP=(:MDP))");
-		$sth->execute(array(':identifiant' => $identifiant,':MDP' => $MDP)
+									VALUES (:Identifiant,:MDP)");
+		$sth->execute(array(':Identifiant' => $identifiant,':MDP' => $MDP)
 		);
 		
 		return $sth->fetchAll();
 		} catch(PDOException $e) {
 			die('Erreur : ' . $e->getMessage());
 		}
+	}
+	
+	public Function verifierIdentifiant($identifiant,$motdepasse){
+		$data=self::getAdminById($identifiant);
+		if (password_verify($motdepasse, $data['MDP'])){
+			return true;
+		}
+		else{
+			return false;
+		}	
 	}
 	
 	public Function getAdminById($identifiant){

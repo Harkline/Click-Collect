@@ -10,6 +10,9 @@ require_once __DIR__ . "/Produit.php";
 session_start(); //session
 error_reporting(E_ALL);//affichage erreurs php
 
+$client = new Admin($bdd);
+$client->createClient($username, $hashPassword, $customerLastName,$customerName,$adress, $phoneNumber,$mail);
+
 $_mail=isset($_POST['email'])? $_POST['email']:"";
 $_nom=isset($_POST['lastname'])? $_POST['lastname']:"";
 $_prenom=!empty($_POST['firstname'])? $_POST['firstname']:"";
@@ -22,7 +25,7 @@ $_mdp2=!empty($_POST['password2'])? $_POST['password2']:"";
 if (isset($_POST['email']) && isset($_POST['lastname']) && !empty($_POST['firstname']) && !empty($_POST['password']) && $_mdp==$_mdp2){
 try{
 	
-	$sth = $dbco->prepare("
+	$sth = $bdd->prepare("
     INSERT INTO Clients(Nom,Prenom,mail,password)
     VALUES (:nom, :prenom, :mail, :password)
     ");
