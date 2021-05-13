@@ -15,6 +15,7 @@ $tabProduits=$produitObj->getAllProducts();
 foreach ($tabProduits as $produit){
 	
 	//On récupère les caractéristiques du produit
+	$idProduit = $produit["id_produit"];
 	$nomProduit = $produit["nom_produit"];
 	$prixProduit = $produit["prix_produit"];
 	$poidProduit = $produit["poid_produit"];
@@ -34,7 +35,7 @@ foreach ($tabProduits as $produit){
 					<p>Description : ".$descriptionProduit."</p>
 					<p>Stock restant : ".$stockProduit."</p>
 				</div>
-				<button type='submit' class='btn btn-primary' name='btnAcheterProduit'>Se connecter</button>
+				<button type='submit' id='".$idProduit."' class='btn btn-primary' name='btnAjouterProduitPanier'>Ajouter au panier</button>
 			</div>
 		</form>"
 		);
