@@ -22,7 +22,7 @@ foreach ($tabProduits as $produit){
 	$descriptionProduit = $produit["description_produit"];
 	$stockProduit = $produit["stock_produit"];
 	
-	//Si aucune des caractéristique produit n'est null 
+	//Si aucune des caractéristique produit n'est null
 	//On affiche le produit dans une card
 	if (!is_null($nomProduit) ||  !is_null($prixProduit) ||  !is_null($poidProduit) ||  !is_null($descriptionProduit) ||  !is_null($stockProduit)){
 	echo ("	
@@ -35,7 +35,9 @@ foreach ($tabProduits as $produit){
 					<p>Description : ".$descriptionProduit."</p>
 					<p>Stock restant : ".$stockProduit."</p>
 				</div>
-				<button type='submit' id='".$idProduit."' class='btn btn-primary' name='btnAjouterProduitPanier'>Ajouter au panier</button>
+				<label for='labelQte'>Quantité :</label><br>
+				<input type='text' id='qteProduit".$idProduit."'><br>
+				<button type='submit' id='btnProduitId".$idProduit."' class='btn btn-primary' name='btnAjouterProduitPanier'>Ajouter au panier</button>
 			</div>
 		</form>"
 		);
@@ -47,6 +49,7 @@ session_start();
 //Inclusion de la barre de navigation Bootstrap
 
 ?>
+
 
 
 <!DOCTYPE html>
@@ -63,5 +66,6 @@ session_start();
 	
 	
 	<body>
+
 	</body>
 </html>
