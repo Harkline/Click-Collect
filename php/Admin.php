@@ -2,6 +2,7 @@
 require_once __DIR__ . "/connectionbdd.php";
 
 
+
 class Admin{
 	Private $Bdd=Null;
 	
@@ -22,6 +23,30 @@ class Admin{
 			die('Erreur : ' . $e->getMessage());
 		}
 	}
+	public Function createArticle($identifiant,$MDP,$nomProduit,$prixProduit,$poidProduit,$descriptionProduit,$stockProduit){
+		if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) {
+			$caught= false;
+			try{	
+				$sth = $this->Bdd->prepare("
+									INSERT INTO T_produits (nom_produit,prix_produit,poid_produit,description_produit,stock_produit)
+									VALUES (:nom_produit,:prix_produit,:poid_produit,:description_produit,:stock_produit)");
+				$sth->execute(array(':nom_produit' => $nomProduit,':prix_produit' => $prixProduit,':poid_produit' => $poidProduit,':description_produit' => $descriptionProduit,':stock_produit' => $stockProduit)
+				);
+		
+				return $sth->fetchAll();
+				
+				echo '<script>alert("Enregistrement à réussi pour le produit :'.$nomProduit.' !")</script>';
+			
+				 
+			} catch(PDOException $e) {
+				echo '<script>alert("'.$e->getMessage().'!")</script>';
+				$caught=true;
+				
+			}
+			
+			
+		}
+	}
 	
 	public Function verifierIdentifiant($identifiant,$motdepasse){
 		$data=self::getAdminById($identifiant);
@@ -40,7 +65,7 @@ class Admin{
 									WHERE Identifiant=(:identifiant)");
 		$sth->execute(array(':identifiant' => $identifiant));
 		
-		return $sth->fetchAll();
+		return $sth->fetch(PDO::FETCH_ASSOC);
 		} catch(PDOException $e) {
 			die('Erreur : ' . $e->getMessage());
 		}

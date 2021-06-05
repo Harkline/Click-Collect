@@ -3,6 +3,8 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 $btnValider = ISSET($_POST["btnValider"]) ? $_POST["btnValider"] : "null"; 
 
 
@@ -30,15 +32,23 @@ if(ISSET($_POST["btnSeConnecter"])){
 		<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto">
+					<?php if(!ISSET($_SESSION['identifiant']) && !ISSET($_SESSION['mdp']) ) { ?>
 					<li class="nav-item active">
 						<a class="nav-link" href="connexionAdmin.php">Connexion<span class="sr-only"></span></a>
 					</li>
+					<?php
+						}
+					?>
+					<?php if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) { ?>
 					<li class="nav-item">
-						<a class="nav-link" href="produits.php">Ajouter des produits</a>
+						<a class="nav-link" href="ajoutArticle.php">Ajouter des produits</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="creationCompteAdmin.php">Créer un utilisateur admin</a>
 					</li>
+					<?php
+						}
+					?>
 				</ul>
 
 			</div>

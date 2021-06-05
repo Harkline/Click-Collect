@@ -5,7 +5,7 @@ error_reporting(E_ALL);
 
 session_start();
 error_log("username password presents !");
-if(!isset($_SESSION["identifiant"])){
+//if(!isset($_SESSION["identifiant"])){
 	require_once "php/connectionbdd.php";
 	require_once "php/Admin.php";
 		
@@ -21,6 +21,7 @@ if(!isset($_SESSION["identifiant"])){
 		error_log("username password presents !");
 		if ($admin->verifierIdentifiant($username, $password)){
 			$_SESSION['identifiant'] = $username;
+			$_SESSION['mdp'] = $password;
 			print($_SESSION['identifiant']);
 			error_log("SessionStart !");
 		}
@@ -28,5 +29,5 @@ if(!isset($_SESSION["identifiant"])){
 			print("Identifiant pas trouvé/valide");
 		}
 	}
-}
+//}
 ?>
