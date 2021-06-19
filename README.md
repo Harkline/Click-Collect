@@ -5,11 +5,11 @@ Tâches (fait = [x] , à faire = [ ]):
 Back office :
 - [x] Création de la BDD
 - [x] Méthodes de connection à la BDD
-- [x] Classes pour chaques tables
+- [x] Création Classes pour chaque table
 - [x] Méthodes de select all pour chaque classes
 - [x] Méthodes de selection par ID pour chaque classes
 - [X] Méthodes d'insertion pour les classes : Client, Admin, Commande,Produit(dans Admin),ProduitsCommande
-- [x] Page de d'Authentification Admin
+- [x] Page d'Authentification Admin
 - [x] Page de création de compte admin pour les admins
 - [x] Page d'ajout de produits pour les admins
 - [ ] Page modification des produits pour les admins
