@@ -19,7 +19,7 @@ USE `clickandcollect`;
 -- Listage de la structure de la table clickandcollect. t_admins
 CREATE TABLE IF NOT EXISTS `t_admins` (
   `Identifiant` varchar(50) NOT NULL,
-  `MDP` varchar(50) NOT NULL,
+  `MDP` varchar(300) NOT NULL,
   UNIQUE KEY `Identifiant` (`Identifiant`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
