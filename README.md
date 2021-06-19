@@ -3,10 +3,19 @@
 Tâches (fait = [x] , à faire = [ ]):
 
 Back office :
-- [ ] Ajout/modification/Suppression de produits
-- [ ] Authentification de l'admin
-- [ ] Liste de clients
-- [ ] Liste des commandes 
+- [x] Création de la BDD
+- [x] Méthodes de connection à la BDD
+- [x] Classes pour chaques tables
+- [x] Méthodes de select all pour chaque classes
+- [x] Méthodes de selection par ID pour chaque classes
+- [X] Méthodes d'insertion pour les classes : Client, Admin, Commande,Produit(dans Admin),ProduitsCommande
+- [x] Page de d'Authentification Admin
+- [x] Page de création de compte admin pour les admins
+- [x] Page d'ajout de produits pour les admins
+- [ ] Page modification des produits pour les admins
+- [ ] Page Suppression des produits pour les admin
+- [ ] Page pour lister les clients pour les admins
+- [ ] Page pour liste les commandes pour les admins
 - [ ] [OPTIONNEL] Possibilité de modifier le statut de la commande
 
 
