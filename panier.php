@@ -8,14 +8,6 @@ session_start();
 //Inclusion de la barre de navigation Bootstrap
 include_once "./html/barreDeNavigation.html";
 
-
-print_r($_SESSION);
-/*
-if(isset($_SESSION["identifiant"])){
-}
-else{
-}
-*/
 ?>
 
 <!DOCTYPE html>

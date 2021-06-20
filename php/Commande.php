@@ -42,7 +42,7 @@ class Commande{
 	public Function getCommandesByIdClient($id){
 		try{
 		$sth = $this->Bdd->prepare("
-									SELECT id_commande,id_client,date_commande FROM T_commandes 
+									SELECT id_commande,id_client,date_commande,total_commande FROM T_commandes 
 									WHERE id_client=(:id)");
 		$sth->execute(array(':id' => $id));
 			
