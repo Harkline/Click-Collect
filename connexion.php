@@ -8,8 +8,6 @@ $btnValider = ISSET($_POST["btnValider"]) ? $_POST["btnValider"] : "null";
 
 include "./html/barreDeNavigation.html";
 
-print("testBtnValider: ".ISSET($_POST["btnValider"]));
-
 if(ISSET($_POST["btnSeConnecter"])){
 	include "./php/scriptConnexion.php";
 }
