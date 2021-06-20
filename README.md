@@ -24,8 +24,8 @@ Front Office:
 - [ ] [OPTIONNEL] Mise à jour des information du compte
 - [x] Authentification du client 
 - [x] Liste de produits (Reste à centrer les cards pour un meilleur affichage, ajouter une photo produit ?)
-- [ ] Ajouter/retirer des produits du panier 
+- [x] Ajouter/retirer des produits du panier 
 - [ ] Transformation du panier en commande
-- [ ] Liste des commandes du client
+- [x] Liste des commandes du client
 
 TO DO : SUPPRIMER LES DROITS GLOBAUX DE L'UTILISATEUR BDD
