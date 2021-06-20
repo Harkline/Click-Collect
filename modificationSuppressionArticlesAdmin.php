@@ -99,6 +99,9 @@
 					<li class="nav-item">
 						<a class="nav-link" href="modificationSuppressionArticlesAdmin.php">Modifier ou supprimer les produits</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="listeClients.php">Afficher la liste des clients</a>
+					</li>
 					<?php
 						}
 					?>

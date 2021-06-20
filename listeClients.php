@@ -3,25 +3,29 @@
 	ini_set('display_startup_errors', 1);
 	error_reporting(E_ALL);
 	
-
+	
 	session_start();
 	
 	require_once "php/connectionbdd.php";
 	require_once "php/Admin.php";
+	require_once "php/Client.php";
 
 	//YL - NOTE $_POST["mail"] mail correspond au nom du champ du formulaire
-	$mail = ISSET($_POST["mail"]) ? $_POST["mail"] : ""; 
-	$username = ISSET($_POST["username"]) ? $_POST["username"] : ""; 
-	$password = ISSET($_POST["password"]) ? $_POST["password"] : "";
-	$hashPassword = password_hash($password, PASSWORD_DEFAULT);
+	//$nomProduit = ISSET($_POST["NomProduit"]) ? $_POST["NomProduit"] : "";
+	//$prixProduit = ISSET($_POST["PrixProduit"]) ? $_POST["PrixProduit"] : "0";
+	//$poidProduit = ISSET($_POST["PoidProduit"]) ? $_POST["PoidProduit"] : "0";
+	//$descriptionProduit = ISSET($_POST["DescriptionProduit"]) ? $_POST["DescriptionProduit"] : "";
+	//$stockProduit = ISSET($_POST["StockProduit"]) ? $_POST["StockProduit"] : "0";
+	
+	
+	//$username = ISSET($_SESSION["username"]) ? $_SESSION["username"] : ""; 
+	//$password = ISSET($_SESSION["mdp"]) ? $_SESSION["mdp"] : "";
+	$produitObj = new Client($bdd);
+	$tabClients=$produitObj->getAllClients();
 			
 	#Envoi du formulaire
-	if(ISSET($_POST["btnValider"])){	
-		$admin = new Admin($bdd);
-		$admin->createAdmin($username, $hashPassword);
-			
-		
-	}
+	
+	
 
 	
 	//Inclusion de la barre de navigation Bootstrap
@@ -34,7 +38,7 @@
 
 <html>
 	<head>
-		<title>Créer un compte</title>
+		<title>Ajouter un produit</title>
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<link rel="stylesheet" type="text/css" href="libs/bootstrap-5.0.0/css/Bootstrap.css">  
@@ -44,7 +48,6 @@
 	
 	
 	<body>
-	
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav me-auto">
@@ -75,25 +78,48 @@
 
 			</div>
 		</nav>
-		<?php if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) { ?>
-	<div class="card" style="width: 25rem;">
-		<form method="post">
+		<?php if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) {
+					
+					echo("<ul>");
+					foreach ($tabClients as $client){
+						
 
-			<div class="form-group">
-				<label for="inputUsernameConnexion">Nom d'utilisateur</label>
-				<input type="username" name="username" class="form-control" id="inputUsernameConnexion" placeholder="Veuillez saisir votre nom d'utilisateur" required>
-			</div>
-			<div class="form-group">
-				<label for="inputPasswordConnexion">Mot de passe</label>
-				<input type="password" name="password" class="form-control" id="inputPasswordConnexion" placeholder="Veuillez saisir votre mot de passe" required>
-			</div>
-
-			
-			
-			<button type="submit" class="btn btn-primary" name="btnValider">Envoyer</button>		
-		</form>
-		<?php
-						}
+						
+						//Si aucune des caractéristique produit n'est null
+						//On affiche le produit dans une card
+						
+						echo ("	
+						
+						<li>
+							
+							<div >
+								<strong>Id : </strong>".$client['Id_client']."
+							</div>
+							<div>
+								<strong>Nom :</strong> ".$client['nom_client']."
+							</div>
+							<div>
+								<strong>Prenom :</strong> ".$client['prenom_client']."
+							</div>
+							<div>
+								<strong>Adresse :</strong> ".$client['adresse_client']."
+							</div>
+							<div>
+								<strong>Téléphone :</strong> ".$client['telephone_client']."
+							</div>
+							<div>
+								<strong>Email :</strong> ".$client['email_client']."
+							</div>
+							</br>
+						</li>
+						
+						
+							");
+						
+					};echo("</ul>");
+					
+		
+				};
 					?>
 	</body>
 </html>

@@ -51,5 +51,16 @@ class Client{
 			die('Erreur : ' . $e->getMessage());
 		}
 	}
+	public Function getAllClients(){
+		try{
+		$sth = $this->Bdd->prepare("
+									SELECT Id_client,nom_client,prenom_client,adresse_client,telephone_client,email_client FROM T_clients 
+									");		
+		$sth->execute();
+		return $sth->fetchAll();
+		} catch(PDOException $e) {
+			die('Erreur : ' . $e->getMessage());
+		}
+	}
 }
 ?>
