@@ -3,10 +3,12 @@ ini_set('display_errors', 1);
 ini_set('display_startup_errors', 1);
 error_reporting(E_ALL);
 
+session_start();
+
 require_once "php/connectionbdd.php";
 require_once "php/Produit.php";
 
-include "./html/barreDeNavigation.html";
+include_once "./html/barreDeNavigation.html";
 
 //On récupère tous les produits en base de donnée
 $produitObj = new Produit($bdd);
@@ -33,11 +35,12 @@ foreach ($tabProduits as $produit){
 					<p>Prix : ".$prixProduit."</p>
 					<p>Poid : ".$poidProduit."</p>
 					<p>Description : ".$descriptionProduit."</p>
-					<p>Stock restant : ".$stockProduit."</p>
+					<p id=stockProduit".$idProduit.">Stock restant : ".$stockProduit."</p>
 				</div>
 				<label for='labelQte'>Quantité :</label><br>
-				<input type='text' id='qteProduit".$idProduit."'><br>
-				<button type='submit' id='btnProduitId".$idProduit."' class='btn btn-primary' name='btnAjouterProduitPanier'>Ajouter au panier</button>
+				<input type='text' id=qteProduit".$idProduit." name=qteProduit><br>
+				<button type='submit' id=".$idProduit." class='btn btn-primary btnAjouterProduitPanier' name='btnAjouterProduitPanier' >Ajouter au panier</button>
+				<button type='submit' id=".$idProduit." class='btn btn-danger btnSupprimerProduitPanier' name='btnSupprimerProduitPanier' >Supprimer du panier</button>
 			</div>
 		</form>"
 		);
@@ -66,6 +69,7 @@ session_start();
 	
 	
 	<body>
-
+		<script src="libs/jquery-3.6.0.min.js"></script>
+		<script src="js/produits.js"></script>
 	</body>
 </html>

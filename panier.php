@@ -6,12 +6,16 @@ error_reporting(E_ALL);
 session_start();
 
 //Inclusion de la barre de navigation Bootstrap
-include "./html/barreDeNavigation.html";
+include_once "./html/barreDeNavigation.html";
 
+
+print_r($_SESSION);
+/*
 if(isset($_SESSION["identifiant"])){
 }
 else{
 }
+*/
 ?>
 
 <!DOCTYPE html>
