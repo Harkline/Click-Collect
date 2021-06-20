@@ -47,6 +47,46 @@ class Admin{
 			
 		}
 	}
+	public Function updateArticle($identifiant,$MDP,$idProduit,$nomProduit,$prixProduit,$poidProduit,$descriptionProduit,$stockProduit){
+		if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) {
+			$caught= false;
+			$sql="
+				UPDATE T_produits SET nom_produit='".$nomProduit."',prix_produit=".$prixProduit.",poid_produit=".$poidProduit.",description_produit='".$descriptionProduit."',stock_produit=".$stockProduit."
+				WHERE id_produit=".$idProduit;
+			try{	
+				$sth = $this->Bdd->prepare($sql);
+				$sth->execute();
+			
+				 echo $sth->rowCount() . " records UPDATED successfully";
+				} catch(PDOException $e) {
+				  echo $sql . "<br>" . $e->getMessage();
+				}
+				
+				
+			
+			
+		}
+	}
+	public Function deleteArticle($identifiant,$MDP,$idProduit){
+		if(ISSET($_SESSION['identifiant']) && ISSET($_SESSION['mdp']) ) {
+			$caught= false;
+			$sql="
+				DELETE FROM T_produits 
+				WHERE id_produit=".$idProduit;
+			try{	
+				$sth = $this->Bdd->prepare($sql);
+				$sth->execute();
+			
+				 echo $sth->rowCount() . " record Deleted successfully";
+				} catch(PDOException $e) {
+				  echo $sql . "<br>" . $e->getMessage();
+				}
+				
+				
+			
+			
+		}
+	}
 	
 	public Function verifierIdentifiant($identifiant,$motdepasse){
 		$data=self::getAdminById($identifiant);

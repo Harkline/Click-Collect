@@ -46,6 +46,9 @@ if(ISSET($_POST["btnSeConnecter"])){
 					<li class="nav-item">
 						<a class="nav-link" href="creationCompteAdmin.php">Créer un utilisateur admin</a>
 					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="modificationSuppressionArticlesAdmin.php">Modifier ou supprimer les produits</a>
+					</li>
 					<?php
 						}
 					?>
