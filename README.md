@@ -14,7 +14,7 @@ Back office :
 - [x] Page d'ajout de produits pour les admins
 - [x] Page modification des produits pour les admins
 - [x] Page Suppression des produits pour les admin
-- [ ] Page pour lister les clients pour les admins
+- [x] Page pour lister les clients pour les admins
 - [ ] Page pour liste les commandes pour les admins
 - [ ] [OPTIONNEL] Possibilité de modifier le statut de la commande
 
