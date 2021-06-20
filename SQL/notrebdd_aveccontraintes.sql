@@ -26,7 +26,7 @@ CREATE TABLE IF NOT EXISTS `t_admins` (
 -- Listage des données de la table clickandcollect.t_admins : ~1 rows (environ)
 /*!40000 ALTER TABLE `t_admins` DISABLE KEYS */;
 INSERT INTO `t_admins` (`Identifiant`, `MDP`) VALUES
-	('admin', 'admin');
+	('admin', '$2y$10$VvXtmxBVP02GHi0fFwFJAePHYT3PVF2ay76jpG3yXowqTmYAn5U.i');
 /*!40000 ALTER TABLE `t_admins` ENABLE KEYS */;
 
 -- Listage de la structure de la table clickandcollect. t_clients
